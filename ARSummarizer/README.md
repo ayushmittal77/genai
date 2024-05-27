@@ -39,11 +39,19 @@ Change to the project directory:
 ```bash
 cd ARSummarizer/
 ```
+
 ### 4. Install Dependencies
 Install the required packages:
 
 ```bash
 pip install -r requirements.txt
+```
+
+### 5. Set Environment Variable
+Create ```.env``` file in your root directory and add this to the file:
+
+```bash
+OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ```
 
 ### 5. Apply Migrations

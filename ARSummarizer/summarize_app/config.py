@@ -1,4 +1,9 @@
-API_KEY = "<YOUR_OPENAI_API_KEY>"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv('OPENAI_API_KEY')
 openai_llm_name = "gpt-4-turbo"
 prompt_template = '''
 Annual Report
