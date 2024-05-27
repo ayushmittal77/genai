@@ -6,6 +6,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 
 from . import serializer
 from .summarizer.summarize import summarize_report
+from .models import Document
 
 
 class DocumentUploadAPIView(APIView):
@@ -40,6 +41,8 @@ class DocumentUploadAPIView(APIView):
             
             if file_extension in ['pdf', 'docx']:
                 summary = summarize_report(file_content, file_extension)
+                document = Document.objects.create(file=file, summary=summary)
+                document.save()
                 return Response({"summary": summary}, status=status.HTTP_200_OK)
             else:
                 return Response({"error": "Unsupported file type"}, status=status.HTTP_400_BAD_REQUEST)
