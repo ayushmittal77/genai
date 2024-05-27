@@ -32,3 +32,5 @@ jobs:
       run: |
         cd ARSummarizer
         python manage.py test
+      env:
+        OPENAI_API_KEY: ${{ secrets.SECRET_KEY }}
