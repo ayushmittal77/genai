@@ -27,4 +27,4 @@ jobs:
         pip install -r ARSummarizer/requirements.txt
     - name: Run Tests
       run: |
-        python ARsummarizer/manage.py test
+        python ARSummarizer/manage.py test
