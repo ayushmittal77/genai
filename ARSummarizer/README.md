@@ -54,11 +54,11 @@ Create ```.env``` file in your root directory and add this to the file:
 OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ```
 
-### 5. Apply Migrations
+### 6. Apply Migrations
 Make migrations for the summarize_view app:
 
 ```bash
-python manage.py makemigrations summarize_view
+python manage.py makemigrations
 ```
 Apply the migrations to the database:
 
@@ -66,7 +66,14 @@ Apply the migrations to the database:
 python manage.py migrate
 ```
 
-### 6. Run the Development Server
+### 7. Run the Tests
+Run all the tests for checking proper working of the app and the view using
+
+```bash
+python manage.py test summarize_app
+```
+
+### 8. Run the Development Server
 Start the Django development server:
 
 ```bash
@@ -74,12 +81,12 @@ python manage.py runserver
 ```
 The server will start, and you can access the application at http://127.0.0.1:8000/.
 
-### 7. Run API Tests
-To run the API call test, execute the following command, specifying the file path:
+### 9. Get the Summary for your file
+To run the API call, execute the following command, specifying the file path:
 ```bash
 python summarize_app/tests/api_call.py <FILE_PATH>
 ```
-Replace <FILE_PATH> with the path to the file you want to use for the API call.
+Replace <FILE_PATH> with the path to the file you want to use for the API call. Only .pdf and .docx files are supported for now.
 
 ## Contributing
 If you wish to contribute to this project, please follow these steps:
