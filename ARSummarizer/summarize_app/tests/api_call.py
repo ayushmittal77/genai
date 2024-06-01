@@ -26,7 +26,7 @@ def upload_document(file_path, file_name):
 
     # Construct the request payload
     payload = {'file': (file_name, file_content)}
-
+    
     # Send a POST request to the API endpoint
     response = requests.post('http://localhost:8000/api/upload-document/', files=payload)
 
